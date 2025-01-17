@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -85,6 +86,10 @@
 
     </section><!-- /Hero Section -->
 
+    <!-- Download button -->
+    <a href="" download=""> <i class="fa-solid fa-circle-down download-icon"></i></a>
+   
+     
     <!-- About Section -->
     <section id="about" class="about section">
 
@@ -108,13 +113,40 @@
           </ul>
         </p>
         <p>
-          My technical toolkit includes:
-          <ul>
+          <h3>My Technical Toolkit Includes:</h3>
+          <div class="tech-container" >
+            <div class="tech-card">
+              <div class="tech-icon">
+                <img src="" alt="Technology Logo" />
+              </div>
+              <p>Jetpack Components</p>
+              <!-- <p>ViewBinding, Navigation Component, and Dagger Hilt</p> -->
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon">
+                <img src="" alt="Technology Logo" />
+              </div>
+              <p>Retrofit</p>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon">
+                <img src="" alt="Technology Logo" />
+              </div>
+              <p>Room Database</p>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon">
+                <img src="" alt="Technology Logo" />
+              </div>
+              <p>Kotlin Coroutines</p>
+            </div>
+          </div>
+          <!-- <ul>
             <li><strong>Jetpack Components</strong>: ViewBinding, Navigation Component, and Dagger Hilt.</li>
             <li><strong>Retrofit</strong>: For efficient network operations.</li>
             <li><strong>Room Database</strong> and <strong>SharedPreferences</strong>: For secure and reliable local data storage.</li>
             <li><strong>Kotlin Coroutines</strong>: For asynchronous programming, ensuring smooth and responsive user experiences.</li>
-          </ul>
+          </ul> -->
         </p>
         <p>
           I am passionate about crafting intuitive and high-quality mobile applications that solve real-world problems while delivering exceptional user experiences.
@@ -303,7 +335,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
+          <h2>Resume</h2>
         <p>
           Experienced Android Developer with more than 4 years in native development, skilled in <strong>Java</strong> and <strong>Kotlin</strong>. Proficient in <strong>MVVM architecture</strong> and <strong>Android SDK</strong>. Lead multiple projects from idea to release, delivering scalable apps. Published over <strong>10 apps</strong> on the Play Store. Strong in collaborating with cross-functional teams, translating client needs into user-friendly mobile solutions. Focused on <strong>performance optimization</strong> and best practices, continuously exploring new tools and methods to enhance app development and user experiences. Passionate about building robust, high-quality mobile applications.
         </p>
@@ -314,6 +346,26 @@
 
         <div class="row">
 
+          
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Android Developer</h4>
+              <h5>April 2023 - December 2024</h5>
+              <p><strong>Cinntra Infotech Solutions Pvt. Ltd.</strong></p>
+            
+              <p>As an Android Developer, I was entrusted with the responsibility of creating applications from scratch and enhancing predeveloped functionalities to ensure robustness and scalability. Utilizing my expertise in MVVM architecture and Kotlin Coroutines. Additionally, I conducted code reviews, mentored junior developers, and contributed to architectural discussions to maintain a high standard of code quality and software engineering excellence.</p>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Android Developer</h4>
+              <h5>Sept 2020 - March 2023</h5>
+              <p><strong>Passosync Analytics Pvt. Ltd.</strong></p>
+<p>As an Android Developer, I was responsible for designing and implementing user interfaces and integrating them with backend APIs. I developed responsive UIs, optimized for performance, and ensured seamless communication between the app and server using tools like Retrofit. I collaborated with backend teams to ensure efficient data flow and a smooth user experience</p>              
+            </div><!-- Edn Resume Item -->
+
+          </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <!-- <h3 class="resume-title">Sumary</h3>
 
@@ -339,25 +391,6 @@
               <h4>Bachelor of Science (physical science)</h4>
               <h5>2015 - 2018</h5>
               <p>University Of Delhi</p>
-            </div><!-- Edn Resume Item -->
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Android Developer</h4>
-              <h5>April 2023 - December 2024</h5>
-              <p><strong>Cinntra Infotech Solutions Pvt. Ltd.</strong></p>
-            
-              <p>As an Android Developer, I was entrusted with the responsibility of creating applications from scratch and enhancing predeveloped functionalities to ensure robustness and scalability. Utilizing my expertise in MVVM architecture and Kotlin Coroutines. Additionally, I conducted code reviews, mentored junior developers, and contributed to architectural discussions to maintain a high standard of code quality and software engineering excellence.</p>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Android Developer</h4>
-              <h5>Sept 2020 - March 2023</h5>
-              <p><strong>Passosync Analytics Pvt. Ltd.</strong></p>
-<p>As an Android Developer, I was responsible for designing and implementing user interfaces and integrating them with backend APIs. I developed responsive UIs, optimized for performance, and ensured seamless communication between the app and server using tools like Retrofit. I collaborated with backend teams to ensure efficient data flow and a smooth user experience</p>              
             </div><!-- Edn Resume Item -->
 
           </div>

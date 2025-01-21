@@ -562,7 +562,7 @@ section,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 2;
+  z-index: 4;
 }
 
 .hero:before {
@@ -624,19 +624,35 @@ section,
 /*--------------------------------------------------------------
 # Download button
 --------------------------------------------------------------*/
-.download-icon {
-  position: fixed;
-  top: 20px;
-  right: 70px;
-  font-size: 32px;
-  cursor: pointer;
-  color: var(--accent-color);
+#download-btn button {
+  border: none;
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  padding: 7px 12px;
+  text-align: center;
   transition: color 0.3s ease, transform 0.3s ease;
-  z-index: 1;
+  cursor: pointer;
+  position: fixed;
+  top: 30%;
+  right: 10%;
+  z-index: 2;
 }
-.download-icon:hover {
-  color: #4c9705;
+#download-btn a {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+#download-btn .download-icon {
+  font-size: 24px;
+  margin-right: 6px;
+}
+#download-btn button:hover {
   transform: scale(1.1);
+}
+
+#download-btn button:hover a {
+  color: #000000;
 }
 
 /*--------------------------------------------------------------
@@ -671,7 +687,7 @@ section,
 .tech-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 20px;
   padding: 20px;
 }
@@ -680,7 +696,7 @@ section,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #fff;
+  /* background: #fff; */
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 120px;
@@ -711,7 +727,7 @@ section,
   margin: 0;
   font-size: 14px;
   font-weight: 500;
-  color: #4a4a4a;
+  color: white;
 }
 /*--------------------------------------------------------------
 # Stats Section
@@ -846,7 +862,28 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-.portfolio .portfolio-filters {
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+}
+.grid-item {
+  border: 2px solid white;
+  height: 300px;
+  width: 300px;
+  border-radius: 8px;
+  justify-items: center;
+  align-items: center;
+}
+
+/* .portfolio .portfolio-filters {
   padding: 0;
   margin: 0 auto 20px auto;
   list-style: none;
@@ -903,7 +940,7 @@ section,
   transition: all ease-in-out 0.3s;
   background: rgba(0, 0, 0, 0.6);
   padding: 15px;
-}
+} */
 
 .portfolio .portfolio-content .portfolio-info h4 {
   font-size: 14px;

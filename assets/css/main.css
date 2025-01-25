@@ -655,6 +655,20 @@ section,
   color: #000000;
 }
 
+@media (max-width: 576px) {
+  #download-btn button {
+    padding: 5px 10px;
+  }
+  #download-btn a {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  #download-btn .download-icon {
+    font-size: 20px;
+    margin-right: 3px;
+  }
+}
+
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -881,6 +895,7 @@ section,
   justify-content: center;
   flex-wrap: wrap;
   gap: 25px;
+  padding: 0px 10px;
 }
 .portfolio-card {
   display: flex;
@@ -897,14 +912,12 @@ section,
   box-shadow: 0 6px 15px rgba(232, 226, 226, 0.2);
 }
 
-.image-wrapper img {
+.portfolio-card img {
   max-width: 300px;
   height: auto;
+  padding: 0;
   border-radius: 9px 0 0 9px;
 }
-/* .image-wrapper {
-  padding: 10px;
-} */
 .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -917,7 +930,7 @@ section,
   font-weight: 700;
 }
 .content-wrapper p {
-  margin-bottom: 70px;
+  margin-bottom: 5vh;
 }
 .button-wrapper {
   display: flex;
@@ -945,6 +958,24 @@ section,
 .button-wrapper button:nth-child(2) a {
   color: white;
   font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .portfolio-card {
+    flex-wrap: wrap;
+    max-width: 300px;
+    position: relative;
+    z-index: 1;
+  }
+  .portfolio-card img {
+    object-fit: contain;
+    width: 100%;
+    border-radius: 9px 9px 0 0;
+  }
+  .portfolio-container {
+    flex-direction: column;
+    gap: 35px;
+  }
 }
 
 /* .portfolio .portfolio-filters {

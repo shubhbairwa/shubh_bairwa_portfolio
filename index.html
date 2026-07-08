@@ -2,526 +2,2043 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio-shubhbairwa</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shubham Bairwa — Lead Android Developer</title>
+  <meta name="description"
+    content="Shubham Bairwa, Lead Android Developer. 6+ years building Kotlin, Jetpack Compose &amp; MVVM native Android applications.">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      /* ---- token system ---- */
+      --bg-deep: #000000;
+      --bg-mesh-1: #050505;
+      --bg-mesh-2: #0a0a0a;
+      --accent-android: #3ddc84;
+      --accent-ios: #0a84ff;
+      --accent-warm: #ff9f43;
+      --text-primary: #ffffff;
+      --text-muted: #9a9ea8;
+      --text-faint: #ffffff;
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+      --glass-fill: rgba(255, 255, 255, 0.045);
+      --glass-fill-strong: rgba(255, 255, 255, 0.09);
+      --glass-border: rgba(255, 255, 255, 0.16);
+      --glass-edge: rgba(255, 255, 255, 0.5);
+      --glass-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.5);
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+      --font-display: 'League Spartan', sans-serif;
+      --font-body: 'League Spartan', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    body {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ---------- ambient mesh background ---------- */
+    .mesh-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 50% 38% at 12% 12%, rgba(61, 220, 132, 0.13), transparent 62%),
+        radial-gradient(ellipse 48% 40% at 88% 18%, rgba(10, 132, 255, 0.14), transparent 62%),
+        radial-gradient(ellipse 55% 45% at 50% 95%, rgba(255, 159, 67, 0.08), transparent 62%),
+        radial-gradient(ellipse 70% 60% at 50% 45%, rgba(255, 255, 255, 0.03), transparent 70%),
+        linear-gradient(180deg, #000000 0%, var(--bg-mesh-1) 45%, var(--bg-mesh-2) 100%);
+      animation: meshDrift 24s ease-in-out infinite alternate;
+      background-size: 140% 140%;
+    }
+
+    @keyframes meshDrift {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      100% {
+        background-position: 20% 15%;
+      }
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    section,
+    header,
+    footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ---------- glass utility ---------- */
+    .glass {
+      position: relative;
+      background: linear-gradient(155deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.015) 45%, rgba(255, 255, 255, 0.03) 100%);
+      border: 1px solid var(--glass-border);
+      -webkit-backdrop-filter: blur(30px) saturate(190%);
+      backdrop-filter: blur(30px) saturate(190%);
+      box-shadow:
+        var(--glass-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+        inset 0 -18px 30px -20px rgba(0, 0, 0, 0.6);
+      border-radius: var(--radius-md);
+      transition: box-shadow .4s ease, transform .4s ease, border-color .4s ease;
+      overflow: hidden;
+    }
+
+    .glass::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      background: radial-gradient(120% 80% at 15% -10%, rgba(255, 255, 255, 0.16), transparent 55%);
+      mix-blend-mode: overlay;
+    }
+
+    .glass::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--glass-edge), transparent);
+      opacity: 0.5;
+    }
+
+    .glass-strong {
+      background: linear-gradient(155deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.03) 100%);
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- nav ---------- */
+    .navpill {
+      position: fixed;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px;
+      border-radius: 999px;
+    }
+
+    .navpill a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      padding: 9px 16px;
+      border-radius: 999px;
+      transition: color .3s ease, background .3s ease;
+      white-space: nowrap;
+    }
+
+    .navpill a.active,
+    .navpill a:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .navpill .brand {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--accent-android);
+      padding: 9px 14px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width:820px) {
+      .navpill {
+        top: auto;
+        bottom: 18px;
+        left: 16px;
+        right: 16px;
+        transform: none;
+        justify-content: space-between;
+        overflow-x: auto;
+      }
+
+      .navpill .brand {
+        display: none;
+      }
+
+      .navpill a {
+        padding: 8px 10px;
+        font-size: 0.68rem;
+      }
+    }
+
+    .cv-btn {
+      position: fixed;
+      top: 22px;
+      right: 24px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: transform .25s ease, background .3s ease;
+    }
+
+    .cv-btn:hover {
+      transform: translateY(-2px);
+      background: var(--glass-fill-strong);
+    }
+
+    @media (max-width:820px) {
+      .cv-btn {
+        top: 16px;
+        right: 16px;
+        padding: 9px 12px;
+        font-size: 0.68rem;
+      }
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 24px 80px;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-android);
+      padding: 7px 16px;
+      border-radius: 999px;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-android);
+      box-shadow: 0 0 8px var(--accent-android);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      font-size: clamp(2.8rem, 7.5vw, 5.6rem);
+      line-height: 0.98;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #ffffff 20%, #9a9ea8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero .role-line {
+      font-family: var(--font-mono);
+      font-size: clamp(1rem, 2.6vw, 1.35rem);
+      color: var(--text-muted);
+      min-height: 1.8em;
+      margin-bottom: 36px;
+    }
+
+    .role-line .cursor {
+      color: var(--accent-android);
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .btn {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      padding: 13px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-android), #2bb96c);
+      color: #04150a;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(61, 220, 132, 0.35);
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-3px);
+      background: var(--glass-fill-strong);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .stat-card {
+      padding: 22px 12px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3.4vw, 2.3rem);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .stat-num span {
+      color: var(--accent-android);
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-faint);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width:700px) {
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ---------- section shell ---------- */
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-head {
+      margin-bottom: 56px;
+      text-align: center;
+    }
+
+    .section-tag {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      font-weight: 800;
+      color: var(--accent-ios);
+      letter-spacing: -0.01em;
+      text-transform: none;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-head h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.8vw, 3.6rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 16px auto 0;
+      font-size: 1rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------- about ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    @media (max-width:840px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .avatar-card {
+      padding: 40px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .avatar-orb {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      margin-bottom: 22px;
+      background: conic-gradient(from 220deg, var(--accent-android), var(--accent-ios), var(--accent-warm), var(--accent-android));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: spin 12s linear infinite;
+    }
+
+    .avatar-orb img {
+      position: absolute;
+      inset: 6px;
+      width: calc(100% - 12px);
+      height: calc(100% - 12px);
+      border-radius: 50%;
+      object-fit: cover;
+      z-index: 2;
+      animation: spin 12s linear infinite reverse;
+    }
+
+    .avatar-fallback {
+      display: none;
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      background: var(--bg-deep);
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.9rem;
+      color: var(--text-primary);
+      z-index: 2;
+      animation: spin 12s linear infinite reverse;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .avatar-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .avatar-card .role {
+      color: var(--accent-android);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      margin-bottom: 18px;
+    }
+
+    .info-list {
+      list-style: none;
+      text-align: left;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .info-list i {
+      color: var(--accent-ios);
+      margin-top: 2px;
+    }
+
+    .info-list b {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .about-content {
+      padding: 40px 36px;
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      font-size: 0.98rem;
+    }
+
+    .about-content strong {
+      color: var(--text-primary);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .chip {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: var(--text-muted);
+    }
+
+    /* ---------- skills ---------- */
+    /* ---------- tech logo marquee ---------- */
+    .marquee-wrap {
+      overflow: hidden;
+      margin-bottom: 44px;
+      padding: 6px 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 32s linear infinite;
+    }
+
+    .marquee-wrap:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeScroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .marquee-group {
+      display: flex;
+      gap: 16px;
+      padding-right: 16px;
+      flex: none;
+    }
+
+    .tech-logo {
+      flex: none;
+      width: 98px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 10px;
+      transition: transform .3s ease, border-color .3s ease;
+    }
+
+    .tech-logo:hover {
+      transform: translateY(-5px) scale(1.07);
+      border-color: rgba(61, 220, 132, 0.4);
+    }
+
+    .tech-logo img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .tech-fallback {
+      display: none;
+      font-size: 1.6rem;
+      color: var(--text-faint);
+    }
+
+    .tech-logo span {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .skill-groups {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width:760px) {
+      .skill-groups {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .skill-card {
+      padding: 26px 24px;
+    }
+
+    .skill-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-card h4 i {
+      color: var(--accent-warm);
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-pill {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      padding: 7px 13px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      color: var(--text-muted);
+      transition: all .25s ease;
+    }
+
+    .skill-pill:hover {
+      color: var(--text-primary);
+      border-color: var(--accent-android);
+      box-shadow: 0 0 14px rgba(61, 220, 132, 0.25);
+      transform: translateY(-2px);
+    }
+
+    /* ---------- experience timeline ---------- */
+    .timeline {
+      position: relative;
+      padding-left: 34px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 9px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-android), var(--accent-ios), transparent);
+    }
+
+    .t-item {
+      position: relative;
+      margin-bottom: 34px;
+      padding: 26px 28px;
+    }
+
+    .t-item::before {
+      content: '';
+      position: absolute;
+      left: -34px;
+      top: 30px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--bg-deep);
+      border: 2px solid var(--accent-android);
+      box-shadow: 0 0 12px rgba(61, 220, 132, 0.5);
+    }
+
+    .t-item.current::before {
+      border-color: var(--accent-warm);
+      box-shadow: 0 0 14px rgba(255, 159, 67, 0.6);
+    }
+
+    .t-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .t-role {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .t-date {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-ios);
+      white-space: nowrap;
+    }
+
+    .t-org {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+    }
+
+    .t-item ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .t-item li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .t-item li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent-android);
+    }
+
+    .edu-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    @media (max-width:760px) {
+      .edu-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .subsection-heading {
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-align: center;
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+      letter-spacing: -0.02em;
+      margin-top: 56px;
+      font-size: 36px;
+    }
+
+    .mini-card {
+      padding: 24px;
+    }
+
+    .mini-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .mini-card .sub {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-warm);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .mini-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .mini-card ul {
+      list-style: none;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .mini-card li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .mini-card li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--accent-android);
+      font-size: 0.7rem;
+      top: 3px;
+    }
+
+    /* ---------- certifications ---------- */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width:760px) {
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cert-card {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      transition: transform .45s cubic-bezier(.22, 1, .36, 1), box-shadow .45s ease, border-color .45s ease;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-8px) scale(1.015);
+      border-color: rgba(61, 220, 132, 0.45);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(61, 220, 132, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .cert-image {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16/10.5;
+      background: linear-gradient(150deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .cert-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s cubic-bezier(.22, 1, .36, 1), filter .6s ease;
+      filter: saturate(0.95) brightness(0.96);
+    }
+
+    .cert-card:hover .cert-image img {
+      transform: scale(1.09) rotate(-0.4deg);
+      filter: saturate(1.1) brightness(1.03);
+    }
+
+    .cert-fallback {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      color: var(--text-faint);
+    }
+
+    .cert-image.img-fallback .cert-fallback {
+      display: flex;
+    }
+
+    .cert-shine {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.22) 50%, transparent 60%);
+      transform: translateX(-120%);
+      transition: transform .8s ease;
+    }
+
+    .cert-card:hover .cert-shine {
+      transform: translateX(120%);
+    }
+
+    .cert-body h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .cert-body .sub {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-warm);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .cert-body p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .section-head code {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent-android);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    /* ---------- apps / iOS home screen signature ---------- */
+    .phone-frame {
+      max-width: 380px;
+      margin: 0 auto;
+      padding: 18px;
+      border-radius: 44px;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.02));
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+    }
+
+    .phone-screen {
+      border-radius: 32px;
+      padding: 22px 18px 26px;
+      background: linear-gradient(200deg, #0d1730, #172a4d 60%, #0d1730);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-primary);
+      margin-bottom: 22px;
+      opacity: 0.9;
+    }
+
+    .status-icons {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .dynamic-island {
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 22px;
+      background: #000;
+      border-radius: 14px;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px 14px;
+    }
+
+    .app-icon-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .app-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #fff;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+      transition: transform .3s cubic-bezier(.34, 1.56, .64, 1);
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(150deg, #2a2d33, #15171b);
+    }
+
+    .app-icon img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+
+    .app-icon .icon-fallback {
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-icon-wrap:hover .app-icon {
+      transform: scale(1.12) rotate(-3deg);
+    }
+
+    .app-name {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .app-dock {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 12px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+    }
+
+    .app-dock .app-icon {
+      width: 46px;
+      height: 46px;
+      font-size: 0.95rem;
+    }
+
+    .apps-note {
+      text-align: center;
+      margin-top: 28px;
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+
+    /* ---------- projects ---------- */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    @media (max-width:900px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project-card {
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .stat-card,
+    .skill-card,
+    .mini-card,
+    .t-item,
+    .app-icon-wrap {
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    }
+
+    .stat-card:hover,
+    .skill-card:hover,
+    .mini-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    .project-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .project-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      font-size: 0.87rem;
+      flex-grow: 1;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      padding: 4px 9px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-faint);
+    }
+
+    /* ---------- footer / contact ---------- */
+    .contact-card {
+      padding: 50px 40px;
+      text-align: center;
+    }
+
+    .contact-card h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4.2vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .contact-card p {
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 30px;
+    }
+
+    .contact-methods {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .contact-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      transition: transform .25s ease;
+    }
+
+    .contact-pill:hover {
+      transform: translateY(-3px);
+    }
+
+    .contact-pill i {
+      color: var(--accent-android);
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .socials a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all .25s ease;
+    }
+
+    .socials a:hover {
+      color: var(--text-primary);
+      transform: translateY(-3px);
+      background: var(--glass-fill-strong);
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 36px 24px 100px;
+      color: var(--text-faint);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+    }
+
+    ::-webkit-scrollbar {
+      width: 9px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent-android);
+      outline-offset: 3px;
+    }
+
+    /* ==== Netflix Hero Override ==== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      overflow: hidden
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 100% 26%
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, .98) 0%, rgba(0, 0, 0, .9) 22%, rgba(0, 0, 0, .65) 45%, rgba(0, 0, 0, .25) 68%, rgba(0, 0, 0, .05) 82%, transparent 100%);
+      z-index: 1
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 90%;
+      width: 100%;
+      margin: 0 auto;
+      padding: 140px 40px 80px;
+      text-align: left
+    }
+
+    .hero h1 {
+      font-size: clamp(4rem, 8vw, 7rem);
+      line-height: .88
+    }
+
+    .hero-ctas {
+      justify-content: flex-start
+    }
+
+    .hero-stats {
+      max-width: 760px
+    }
+
+    @media(max-width:768px) {
+      .hero-inner {
+        padding: 120px 24px 60px
+      }
+
+      .hero h1 {
+        font-size: 3.5rem
+      }
+
+      .hero-bg img {
+        object-position: 70% center
+      }
+    }
+  </style>
 </head>
 
-<body class="index-page">
+<body>
 
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+  <div class="mesh-bg"></div>
+  <div class="grain"></div>
 
-    <div class="profile-img">
-      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+  <nav class="navpill glass">
+    <span class="brand">SB</span>
+    <a href="#hero" class="nav-link active">home</a>
+    <a href="#about" class="nav-link">about</a>
+    <a href="#skills" class="nav-link">skills</a>
+    <a href="#experience" class="nav-link">experience</a>
+    <a href="#educations" class="nav-link">Education</a>
+    <a href="#certifications" class="nav-link">certifications</a>
+    <a href="#apps" class="nav-link">apps</a>
+    <a href="#projects" class="nav-link">projects</a>
+    <a href="#contact" class="nav-link">contact</a>
+  </nav>
+
+  <a class="cv-btn glass" href="./assets/docs/Shubham_Bairwa_Resume.docx" download>
+    <i class="ri-download-2-line"></i> Resume
+  </a>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-bg">
+      <img src="./assets/img/hero-bg.jpg" alt="Profile">
     </div>
-
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Shubham Bairwa</h1>
-    </a>
-
-    <div class="social-links text-center">
-    
-      <a href="https://www.facebook.com/Bairwashubh/" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="https://www.instagram.com/bairwa_shubh/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/shubhbairwa" target="_blank"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/shubham-bairwa-0296b2171/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
-    </div>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-briefcase navicon"></i> Portfolio</a></li>
-       
-        <!-- <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li> -->
-      </ul>
-    </nav>
-
-  </header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Shubham Bairwa</h2>
-         <p>I'm <span class="typed" data-typed-items="an Android Developer, a Content Creator">Developer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="eyebrow glass"><span class="dot"></span> Available for Lead Android roles</div>
+      <h1>Shubham<br>Bairwa</h1>
+      <div class="role-line">I build <span id="typed-role">Kotlin &amp; Jetpack Compose apps</span><span
+          class="cursor">|</span></div>
+      <div class="hero-ctas">
+        <a href="#apps" class="btn btn-primary"><i class="ri-apps-2-line"></i> See published apps</a>
+        <a href="#contact" class="btn btn-ghost glass"><i class="ri-mail-line"></i> Get in touch</a>
       </div>
+      <div class="hero-stats">
+        <div class="stat-card glass">
+          <div class="stat-num"><span class="count" data-target="6">0</span>+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-num"><span class="count" data-target="10">0</span>+</div>
+          <div class="stat-label">Apps Published</div>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-num"><span class="count" data-target="25">0</span>+</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-card glass">
+          <div class="stat-num"><span class="count" data-target="1">0</span></div>
+          <div class="stat-label">Lead</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </section>
-    <!-- /Hero Section -->
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
 
-    <!-- Download button -->
-     <div id="download-btn">
-      <button>
-        <a href="./assets/file/shubham_bairwa .docx" download><i class="ri-file-download-line download-icon"></i>Download CV</a>
-      </button>
-     </div>
-      <!-- /Download button -->
-   
-     
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
-        <p>
-          I am an experienced <strong>Android Developer</strong> with over <strong>4 years</strong> of expertise in native app development using <strong>Java</strong> and <strong>Kotlin</strong>. My journey in mobile app development has been marked by delivering clean, maintainable, and scalable applications, leveraging the <strong>MVVM architecture</strong>.
-        </p>
-        <!-- <p>
-          Throughout my career, I have:
-          <ul>
-            <li>Worked on <strong>20+ projects</strong> and led multiple projects from concept to release.</li>
-            <li>Published <strong>10+ apps</strong> on the Google Play Store.</li>
-            <li>Focused on <strong>performance optimization</strong> and best practices like:
-              <ul>
-                <li><strong>Singleton Pattern</strong> and <strong>Factory Design Pattern</strong>.</li>
-                <li><strong>Dependency Injection</strong> for modular and testable code.</li>
-              </ul>
-            </li>
+      </div>
+      <div class="about-grid reveal">
+        <div class="avatar-card glass">
+          <div class="avatar-orb">
+            <img src="./assets/img/my-profile-img.jpg" alt="Shubham Bairwa"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="avatar-fallback">SB</div>
+          </div>
+          <h3>Shubham Bairwa</h3>
+          <span class="role">Lead Android Developer</span>
+          <ul class="info-list">
+            <li><i class="ri-cake-2-line"></i><span><b>Birthday:</b> 6 July 1997</span></li>
+            <li><i class="ri-phone-line"></i><span><b>Phone:</b> +91 87000-88744</span></li>
+            <li><i class="ri-map-pin-line"></i><span><b>City:</b> Ghaziabad, India</span></li>
+            <li><i class="ri-mail-line"></i><span><b>Email:</b> shubhamver61002@gmail.com</span></li>
+            <li><i class="ri-graduation-cap-line"></i><span><b>Degree:</b> B.Sc. Computer Science, University of
+                Delhi</span></li>
           </ul>
-        </p> -->
-        <p>
-          <h3>Technology used</h3>
-          <div class="tech-container" >
-            <div class="tech-card">
-              <div class="tech-icon">
-                <img src="./assets/img/android.png" alt="Technology Logo" />
-              </div>
-              <p>Jetpack Components</p>
-              <!-- <p>ViewBinding, Navigation Component, and Dagger Hilt</p> -->
-            </div>
-            <div class="tech-card">
-              <div class="tech-icon white-col">
-                <img src="./assets/img/api.png" alt="Technology Logo" />
-              </div>
-              <p>Retrofit</p>
-            </div>
-            <div  class="tech-card">
-              <div class="tech-icon ">
-                <img src="./assets/img/database.png" alt="Technology Logo" />
-              </div>
-              <p>Room Database</p>
-            </div>
-            <div class="tech-card">
-              <div class="tech-icon">
-                <img src="./assets/img/kotlin.png" alt="Technology Logo" />
-              </div>
-              <p>Kotlin Coroutines</p>
-            </div>
-          </div>
-          <!-- <ul>
-            <li><strong>Jetpack Components</strong>: ViewBinding, Navigation Component, and Dagger Hilt.</li>
-            <li><strong>Retrofit</strong>: For efficient network operations.</li>
-            <li><strong>Room Database</strong> and <strong>SharedPreferences</strong>: For secure and reliable local data storage.</li>
-            <li><strong>Kotlin Coroutines</strong>: For asynchronous programming, ensuring smooth and responsive user experiences.</li>
-          </ul> -->
-        </p>
-        <p>
-          I am passionate about crafting intuitive and high-quality mobile applications that solve real-world problems while delivering exceptional user experiences.
-        </p>
-      </div>
-      <!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="assets/img/close-up-image-programer-working-his-desk-office.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>Personal Info</h2>
-            
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>6 july 1997</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91-87000-88744</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Ghaziabad, India</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor in physical science</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>shubhamver61002@gmail.com</span></li>
-                </ul>
-              </div>
-            </div>
-            
+        </div>
+        <div class="about-content glass">
+          <p>Results-driven <strong>Lead Android Developer</strong> with <strong>6+ years</strong> of native Android
+            development experience in Java and Kotlin, including hands-on team leadership, sprint planning, and code
+            review.</p>
+          <p>Skilled in <strong>MVVM architecture</strong>, <strong>Jetpack Compose</strong>, and legacy XML UI, with
+            proven success taking features from design through development to release, and maintaining <strong>10+
+              published Play Store applications</strong>.</p>
+          <p>Experienced in assigning and prioritizing tasks across development teams, mentoring junior engineers, and
+            partnering with cross-functional stakeholders — backend, QA, product, and design — to deliver scalable,
+            high-performance mobile solutions on schedule.</p>
+          <p>Strong background in REST API integration, asynchronous programming (Coroutines, Flow), dependency
+            injection (Dagger Hilt), and Firebase, with a continued focus on clean, modular architecture and production
+            stability.</p>
+          <div class="chip-row">
+            <span class="chip glass">Team Leadership</span>
+            <span class="chip glass">Sprint Planning</span>
+            <span class="chip glass">Mentoring</span>
+            <span class="chip glass">Performance Optimization</span>
           </div>
         </div>
-
-      </div>
-
-    </section>
-    <!-- /About Section -->
-
-    <!-- Stats Section -->
-    <section id="stats" class="stats section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Projects Done successfully.</strong> <span> </span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-card-checklist"></i>
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Apps uploaded on playstore</strong> <span></span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-briefcase"></i>
-              <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Years of Experience</strong> <span></span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Lead projects from scratch</strong> <span></span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
-
-      </div>
-
-    </section>
-    <!-- /Stats Section -->
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill"><span>Android</span> <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Kotlin</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Java</span> <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-            <div class="progress">
-              <span class="skill"><span>SQLIte</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-            <div class="progress">
-              <span class="skill"><span>MVVM</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-
-          </div>
-
-          <div class="col-lg-6">
-
-           
-
-            
-
-            <div class="progress">
-              <span class="skill"><span>Jetpack Components</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>Dagger-Hilt</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>Retrofit</span> <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>Room</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill"><span>Git</span> <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            
-            
-            <!-- End Skills Item -->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-    <!-- /Skills Section -->
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-          <h2>Resume</h2>
-        <p>
-          Experienced Android Developer with more than 4 years in native development, skilled in <strong>Java</strong> and <strong>Kotlin</strong>. Proficient in <strong>MVVM architecture</strong> and <strong>Android SDK</strong>. Lead multiple projects from idea to release, delivering scalable apps. Published over <strong>10 apps</strong> on the Play Store. Strong in collaborating with cross-functional teams, translating client needs into user-friendly mobile solutions. Focused on <strong>performance optimization</strong> and best practices, continuously exploring new tools and methods to enhance app development and user experiences. Passionate about building robust, high-quality mobile applications.
-        </p>
-        
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row">
-
-          
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Android Developer</h4>
-              <h5>April 2023 - December 2024</h5>
-              <p><strong>Cinntra Infotech Solutions Pvt. Ltd.</strong></p>
-            
-              <p>As an Android Developer, I was entrusted with the responsibility of creating applications from scratch and enhancing predeveloped functionalities to ensure robustness and scalability. Utilizing my expertise in MVVM architecture and Kotlin Coroutines. Additionally, I conducted code reviews, mentored junior developers, and contributed to architectural discussions to maintain a high standard of code quality and software engineering excellence.</p>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Android Developer</h4>
-              <h5>Sept 2020 - March 2023</h5>
-              <p><strong>Passosync Analytics Pvt. Ltd.</strong></p>
-<p>As an Android Developer, I was responsible for designing and implementing user interfaces and integrating them with backend APIs. I developed responsive UIs, optimized for performance, and ensured seamless communication between the app and server using tools like Retrofit. I collaborated with backend teams to ensure efficient data flow and a smooth user experience</p>              
-            </div><!-- Edn Resume Item -->
-
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <!-- <h3 class="resume-title">Sumary</h3>
-
-            <div class="resume-item pb-0">
-              <h4>Brandon Johnson</h4>
-              <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
-              <ul>
-                <li>Portland par 127,Orlando, FL</li>
-                <li>(123) 456-7891</li>
-                <li>alice.barkley@example.com</li>
-              </ul>
-            </div>Edn Resume Item -->
-
-            <h3 class="resume-title">Education</h3>
-            <!-- <div class="resume-item">
-              <h4>Master of Fine Arts &amp; Graphic Design</h4>
-              <h5>2015 - 2016</h5>
-              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-              <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
-            </div>Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Bachelor of Science (physical science)</h4>
-              <h5>2015 - 2018</h5>
-              <p>University Of Delhi</p>
-            </div><!-- Edn Resume Item -->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-    <!-- /Resume Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section light-background">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-      </div>
-
-      <div class="portfolio-container">
-        
-      <div class="portfolio-card">
-        <div class="image-wrapper">
-          <img src="./assets/img/runningtracker.jpg" alt="Person is running">
-        </div>
-        <div class="content-wrapper">
-          <h4>Track-Your-Run</h4>
-          <p>This Android running app utilizes the MVVM architecture and Google Maps API to track your runs. It allows you to save and sort your runs based on various metrics, such as date, distance, and time. With this app, you can effectively monitor your running progress and optimize your training.</p>
-          <div class="button-wrapper">
-            <button><a href="./assets/APK/trackyourrun.apk" >Download</a></button>
-            <button><a href="https://github.com/shubhbairwa/Track-Your-Run" target="_blank">See more</a></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-card">
-        <div class="image-wrapper">
-          <img src="./assets/img/breakingnews.jpg" alt="Person is running">
-        </div>
-        <div class="content-wrapper">
-          <h4>News App</h4>
-          <p>It is an android application for breaking news lover. This application is build on Model-View-ViewModel pattern and this app has swipe to delete functionality in saved news fragment to delete an article.            .</p>
-          <div class="button-wrapper">
-            <button><a href="">Download</a></button>
-            <button><a href="https://github.com/shubhbairwa/News-Application" target="_blank">See more</a></button>
-          </div>
-          
-        </div>
-      </div>
-
-
-      </div>
-      
-
-     
-    </section>
-
-        
-
-      <!-- Section Title -->
-      <!-- <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div> -->
-      
-      <!-- End Section Title -->
-
-
-    
-    
-    <!-- /Portfolio Section -->
-
-    <!-- Services Section -->
-
-
-    
-
-  
-
-    
-    <!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer position-relative light-background">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
       </div>
     </div>
+  </section>
 
-  </footer>
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <h2>Skills &amp; Stack</h2>
+        </p>
+      </div>
+      <div class="marquee-wrap reveal">
+        <div class="marquee-track">
+          <div class="marquee-group">
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-code-s-slash-line tech-fallback"></i><span>Kotlin</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-code-s-slash-line tech-fallback"></i><span>Java</span></div>
+            <div class="tech-logo glass"><img src="https://cdn.simpleicons.org/jetpackcompose/4285F4"
+                alt="Jetpack Compose" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-layout-3-line tech-fallback"></i><span>Jetpack Compose</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-android-line tech-fallback"></i><span>Android</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-fire-line tech-fallback"></i><span>Firebase</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-git-branch-line tech-fallback"></i><span>Git</span></div>
+            <div class="tech-logo glass"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-github-line tech-fallback"></i><span>GitHub</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-database-2-line tech-fallback"></i><span>MySQL</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-plain.svg" alt="SQLite"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-database-2-line tech-fallback"></i><span>SQLite</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-pencil-ruler-2-line tech-fallback"></i><span>Figma</span></div>
+            <div class="tech-logo glass"><img src="https://cdn.simpleicons.org/adobexd/FF61F6" alt="Adobe XD"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-pencil-ruler-2-line tech-fallback"></i><span>Adobe XD</span></div>
+            <div class="tech-logo glass"><img src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-send-plane-line tech-fallback"></i><span>Postman</span></div>
+            <div class="tech-logo glass"><img src="https://cdn.simpleicons.org/googlemaps/4285F4" alt="Google Maps"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-map-pin-2-line tech-fallback"></i><span>Google Maps</span></div>
+            <div class="tech-logo glass"><img src="https://cdn.simpleicons.org/razorpay/5B8DEF" alt="Razorpay"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-secure-payment-line tech-fallback"></i><span>Razorpay</span></div>
+            <div class="tech-logo glass"><img
+                src="./assets/img/gradle.png" alt="Gradle"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-hammer-line tech-fallback"></i><span>Gradle</span></div>
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt=""
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-code-s-slash-line tech-fallback"></i><span>Kotlin</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-code-s-slash-line tech-fallback"></i><span>Java</span></div>
+            <div class="tech-logo glass"><img src="https://cdn.simpleicons.org/jetpackcompose/4285F4" alt=""
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-layout-3-line tech-fallback"></i><span>Jetpack Compose</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt=""
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-android-line tech-fallback"></i><span>Android</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt=""
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-fire-line tech-fallback"></i><span>Firebase</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-git-branch-line tech-fallback"></i><span>Git</span></div>
+            <div class="tech-logo glass"><img src="https://cdn.simpleicons.org/github/ffffff" alt="" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-github-line tech-fallback"></i><span>GitHub</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-database-2-line tech-fallback"></i><span>MySQL</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-plain.svg" alt="" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-database-2-line tech-fallback"></i><span>SQLite</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-pencil-ruler-2-line tech-fallback"></i><span>Figma</span></div>
+            <div class="tech-logo glass"><img src="https://cdn.simpleicons.org/adobexd/FF61F6" alt="" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-pencil-ruler-2-line tech-fallback"></i><span>Adobe XD</span></div>
+            <div class="tech-logo glass"><img src="https://cdn.simpleicons.org/postman/FF6C37" alt="" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-send-plane-line tech-fallback"></i><span>Postman</span></div>
+            <div class="tech-logo glass"><img src="https://cdn.simpleicons.org/googlemaps/4285F4" alt="" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-map-pin-2-line tech-fallback"></i><span>Google Maps</span></div>
+            <div class="tech-logo glass"><img src="https://cdn.simpleicons.org/razorpay/5B8DEF" alt="" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-secure-payment-line tech-fallback"></i><span>Razorpay</span></div>
+            <div class="tech-logo glass"><img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-plain.svg" alt="" loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"><i
+                class="ri-hammer-line tech-fallback"></i><span>Gradle</span></div>
+          </div>
+        </div>
+      </div>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+      <div class="skill-groups reveal">
+        <div class="skill-card glass">
+          <h4><i class="ri-code-s-slash-line"></i> Languages &amp; UI</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Kotlin</span><span class="skill-pill">Java</span><span
+              class="skill-pill">SQL</span><span class="skill-pill">XML</span>
+            <span class="skill-pill">Jetpack Compose</span><span class="skill-pill">Material Design</span><span
+              class="skill-pill">ViewBinding</span><span class="skill-pill">Data Binding</span>
+          </div>
+        </div>
+        <div class="skill-card glass">
+          <h4><i class="ri-stack-line"></i> Architecture</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">MVVM</span><span class="skill-pill">Clean Architecture</span><span
+              class="skill-pill">Repository Pattern</span>
+          </div>
+        </div>
+        <div class="skill-card glass">
+          <h4><i class="ri-tools-line"></i> Libraries &amp; Tools</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Dagger Hilt</span><span class="skill-pill">Retrofit</span><span
+              class="skill-pill">Room</span><span class="skill-pill">Glide</span>
+            <span class="skill-pill">Coroutines</span><span class="skill-pill">Flow (StateFlow/SharedFlow)</span><span
+              class="skill-pill">WorkManager</span><span class="skill-pill">Navigation</span><span
+              class="skill-pill">LiveData</span><span class="skill-pill">Paging</span>
+          </div>
+        </div>
+        <div class="skill-card glass">
+          <h4><i class="ri-database-2-line"></i> Backend &amp; Data</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">REST APIs</span><span class="skill-pill">Firebase Auth</span><span
+              class="skill-pill">Firestore</span><span class="skill-pill">Crashlytics</span><span
+              class="skill-pill">Remote Config</span><span class="skill-pill">FCM</span><span
+              class="skill-pill">MySQL</span><span class="skill-pill">SQLite</span><span
+              class="skill-pill">WebSocket</span>
+          </div>
+        </div>
+        <div class="skill-card glass">
+          <h4><i class="ri-plug-line"></i> Integrations</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Google Maps API</span><span class="skill-pill">Razorpay</span><span
+              class="skill-pill">ExoPlayer</span>
+          </div>
+        </div>
+        <div class="skill-card glass">
+          <h4><i class="ri-team-line"></i> Practices &amp; Leadership</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Unit Testing</span><span class="skill-pill">Git/GitHub</span><span
+              class="skill-pill">Agile/Scrum</span><span class="skill-pill">Code Review</span><span
+              class="skill-pill">CI/CD Awareness</span><span class="skill-pill">Task Allocation</span><span
+              class="skill-pill">Mentoring</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+        <h2>Experience</h2>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="t-item glass current">
+          <div class="t-top"><span class="t-role">Lead Android Developer</span><span class="t-date">June 2025 —
+              Present</span></div>
+          <div class="t-org">Codeaegis Private Limited · Sector 63, Noida</div>
+          <ul>
+            <li>Lead and mentor a team of Android developers, assigning tasks and prioritizing sprint deliverables.</li>
+            <li>Conduct code reviews and enforce architectural best practices, improving quality and consistency.</li>
+            <li>Build with Jetpack Compose and XML, guiding the team's move toward declarative UI.</li>
+            <li>Profile memory usage, reduce ANRs, and optimize app startup time in production apps.</li>
+            <li>Own end-to-end Play Store deployment — releases, version updates, release monitoring.</li>
+          </ul>
+        </div>
+
+        <div class="t-item glass">
+          <div class="t-top"><span class="t-role">Android Developer</span><span class="t-date">March 2023 — December
+              2024</span></div>
+          <div class="t-org">Cinntra Infotech Pvt. Ltd · Sector 63, Noida</div>
+          <ul>
+            <li>Built applications from scratch using MVVM architecture and Kotlin Coroutines.</li>
+            <li>Conducted code reviews and mentored junior developers on architectural decisions.</li>
+            <li>Owned end-to-end Play Store deployment for production applications.</li>
+          </ul>
+        </div>
+
+        <div class="t-item glass">
+          <div class="t-top"><span class="t-role">Android Developer</span><span class="t-date">September 2020 — April
+              2023</span></div>
+          <div class="t-org">Passosync Analytics Pvt. Ltd · New Delhi</div>
+          <ul>
+            <li>Designed and implemented responsive UIs integrated with backend REST APIs via Retrofit.</li>
+            <li>Optimized performance and collaborated with backend teams on data flow.</li>
+          </ul>
+        </div>
+
+        <div class="t-item glass">
+          <div class="t-top"><span class="t-role">Mobile Application Developer Intern</span><span class="t-date">June
+              2019 — July 2019</span></div>
+          <div class="t-org">Morling Global Pvt. Ltd · Noida, Uttar Pradesh</div>
+          <ul>
+            <li>Designed login and registration screens.</li>
+            <li>Tested APIs with Postman and built validation logic for auth flows.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!--Educations-->
+      <section id="educations" class="section">
+        <div class="wrap">
+          <div class="section-head reveal">
+
+            <h2>Education</h2>
+          </div>
+          <div class="edu-row">
+            <div class="mini-card glass">
+              <span class="sub">2015 — 2018</span>
+              <h4>B.Sc. (Program) in Computer Science</h4>
+              <p>University of Delhi, New Delhi</p>
+            </div>
+            <div class="mini-card glass">
+              <span class="sub">2015 — 2016</span>
+              <h4>Higher Secondary (12th)</h4>
+              <p>CBSE</p>
+            </div>
+          </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+
+        <h2>Certifications</h2>
+      </div>
+      <div class="cert-grid reveal">
+        <div class="cert-card glass">
+          <div class="cert-image">
+            <img src="./assets/certifications/android_cert.png"
+              alt="Certified Program in Android Development certificate, LCO"
+              onerror="this.parentElement.classList.add('img-fallback'); this.style.display='none';">
+            <div class="cert-fallback"><i class="ri-award-line"></i></div>
+            <div class="cert-shine"></div>
+          </div>
+          <div class="cert-body">
+            <h4> Android P with Machine learning Apps - 26+ projects</h4>
+            <span class="sub">LCO . 2021</span>
+            <p>Structured certification covering native Android fundamentals through to applied app-building practices.
+            </p>
+          </div>
+        </div>
+
+        <div class="cert-card glass">
+          <div class="cert-image">
+            <img src="./assets/certifications/oreo_cert.png" alt="Android Development with java"
+              onerror="this.parentElement.classList.add('img-fallback'); this.style.display='none';">
+            <div class="cert-fallback"><i class="ri-award-line"></i></div>
+            <div class="cert-shine"></div>
+          </div>
+          <div class="cert-body">
+            <h4>Android Development with java</h4>
+            <span class="sub">LCO · 2024</span>
+            <p> Successfully completed Complete Android development with Java - Build 10 Apps</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPS - signature iOS home-screen showcase -->
+  <section id="apps" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+
+        <h2>Published Applications</h2>
+      </div>
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="dynamic-island"></div>
+
+          <div class="status-bar">
+            <span>9:16</span>
+            <div class="status-icons">
+              <i class="ri-signal-wifi-fill"></i>
+              <i class="ri-battery-fill"></i>
+            </div>
+          </div>
+
+          <div class="app-grid">
+
+            <a class="app-icon-wrap"
+              href="https://play.google.com/store/apps/details?id=com.abstracttechspace.lbw11&pcampaignid=web_share"
+              target="_blank" rel="noopener">
+              <div class="app-icon" style="background:linear-gradient(150deg,#ff6b6b,#c92a2a);">
+                <img src="https://play-lh.googleusercontent.com/Th-eHApHlLdjyrh-AmuxtBiJnXBUDyKUYgDKgYkixfHXxFkeXob2AqeHi64gEZrtVAdtyYhBVrLfJS7czqNu=w256-h256" alt="LBW11"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="icon-fallback">L11</span>
+              </div>
+              <span class="app-name">LBW11</span>
+            </a>
+
+            <a class="app-icon-wrap" href="https://play.google.com/store/apps/details?id=com.bnea&pcampaignid=web_share"
+              target="_blank" rel="noopener">
+              <div class="app-icon" style="background:linear-gradient(150deg,#ff9f43,#e67700);">
+                <img src="https://play-lh.googleusercontent.com/50IbYlDrg4N4wiZ4VgG45D5dNcWQdzzYWvVfigufqGRjLnPoRYxc5BQpqD24j-N__kcn-29gYsz9Ay6-w-NsSUc=w256-h256" alt="BNEA"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="icon-fallback">BN</span>
+              </div>
+              <span class="app-name">BNEA</span>
+            </a>
+
+            <a class="app-icon-wrap"
+              href="https://play.google.com/store/apps/details?id=com.cinntra.ledure&pcampaignid=web_share"
+              target="_blank" rel="noopener">
+              <div class="app-icon" style="background:linear-gradient(150deg,#3ddc84,#0b8457);">
+                <img src="https://play-lh.googleusercontent.com/rJm3fTZSqJJ6m68F32I-sGGfDHgbKF2MM4RXgDLneoqjhvkiIDezzxfNf7emocXdU6mtlRTWCi6D7M495nimcLQ=w256-h256" alt="Ledure"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="icon-fallback">Le</span>
+              </div>
+              <span class="app-name">Ledure</span>
+            </a>
+
+            <a class="app-icon-wrap"
+              href="https://play.google.com/store/apps/details?id=com.ledure.galaxy&pcampaignid=web_share"
+              target="_blank" rel="noopener">
+              <div class="app-icon" style="background:linear-gradient(150deg,#9775fa,#5f3dc4);">
+                <img src="https://play-lh.googleusercontent.com/-LDKCPgEh9ypzaxpoV5iQ7-Vywu4EjrTioGINCJY4o-J12VEOFEKwtXl_s9tp4b5pO48pZbUkXAapp2ZYxHIqA=w256-h256" alt="Ledure Galaxy"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="icon-fallback">LG</span>
+              </div>
+              <span class="app-name">Ledure Galaxy</span>
+            </a>
+
+            <a class="app-icon-wrap"
+              href="https://play.google.com/store/apps/details?id=com.ledure.connect&pcampaignid=web_share"
+              target="_blank" rel="noopener">
+              <div class="app-icon" style="background:linear-gradient(150deg,#0a84ff,#0056b3);">
+                <img src="https://play-lh.googleusercontent.com/w1zUbQj0KfXy6WA4jwfgelLXrUF1GOX_LMMWVdQZbrI6jQwJLJGIefMeb-RIig7cbhV7uqp0f0omtLEUo7jKXA=w256-h256" alt="Ledure Connect"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="icon-fallback">LC</span>
+              </div>
+              <span class="app-name">Ledure Connect</span>
+            </a>
+
+            <a class="app-icon-wrap"
+              href="https://play.google.com/store/apps/details?id=com.menzill&pcampaignid=web_share" target="_blank"
+              rel="noopener">
+              <div class="app-icon" style="background:linear-gradient(150deg,#22b8cf,#0b7285);">
+                <img src="https://play-lh.googleusercontent.com/zX5MLJ8JafqDOVHt6uykS2iexwjEG8s4MQG3jOzZHA4DqHQc-aBdoVL5cXoLMFPBBhZUEmvVEw8jV6PCQvbkvQ=w256-h256" alt="Menzill"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="icon-fallback">Mz</span>
+              </div>
+              <span class="app-name">Menzill</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <p class="apps-note">10+ published across career</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+     
+        <h2>Projects</h2>
+      </div>
+      <div class="project-grid reveal">
+        <div class="project-card glass">
+          <div class="project-icon" style="background:linear-gradient(150deg,#9775fa,#5f3dc4);"><i
+              class="ri-wallet-3-line"></i></div>
+          <h4>splitMe</h4>
+          <p>A bill-splitting and group expense tracker built with Jetpack Compose and Material Design 3. Auto-adds a
+            "Me" profile to every group, supports equal/manual/percentage splits, and includes a Settle Up flow with
+            adaptive multi-pane navigation.</p>
+          <div class="tag-row"><span class="tag">Jetpack Compose</span>
+            <span class="tag">MVVM</span>
+            <span class="tag">Material Design 3</span><span
+              class="tag">Room</span><span class="tag">Coroutines &amp; Flow</span><span class="tag">Navigation Library</span>
+            <span class="tag">Firebase</span>
+          </div>
+          <div class="tag-row"><a href="https://github.com/shubhbairwa/split-me" target="_blank" rel="noopener"
+              style="color:var(--accent-android); font-family:var(--font-mono); font-size:0.78rem; text-decoration:none;">View
+              on GitHub →</a></div>
+        </div>
+        <div class="project-card glass">
+          <div class="project-icon" style="background:linear-gradient(150deg,#ff6b6b,#c92a2a);"><i
+              class="ri-movie-2-line"></i></div>
+          <h4>ShubhFlix</h4>
+          <p>An Android video streaming app powered by ExoPlayer for smooth playback with custom forward/rewind/seek
+            controls, Retrofit for fetching videos from a free video API, and Dagger Hilt for dependency injection
+            across an MVVM architecture.</p>
+          <div class="tag-row"><span class="tag">ExoPlayer</span><span class="tag">MVVM</span><span
+              class="tag">Retrofit</span><span class="tag">Dagger Hilt</span>
+            <span class="tag">Navigation Library</span>
+            <span class="tag">Paging 3</span>
+          </div>
+          <div class="tag-row"><a href="https://github.com/shubhbairwa/ShubhFlix" target="_blank" rel="noopener"
+              style="color:var(--accent-android); font-family:var(--font-mono); font-size:0.78rem; text-decoration:none;">View
+              on GitHub →</a></div>
+        </div>
+        <div class="project-card glass">
+          <div class="project-icon" style="background:linear-gradient(150deg,#3ddc84,#0b8457);"><i
+              class="ri-run-line"></i></div>
+          <h4>Track-Your-Run</h4>
+          <p>Personal project tracking runs with the Google Maps API and show the track you followed wtih foreground service, so tracking continues
+            even when switching apps. Built on MVVM architecture.</p>
+          <div class="tag-row"><span class="tag">MVVM</span><span class="tag">Foreground Service</span><span
+              class="tag">Maps API</span>
+            <span class="tag">Navigation Library</span>
+            <span class="tag">Graphs SDK</span>
+            <span class="tag">ROOM</span>
+            </div>
+          <div class="tag-row"><a href="https://github.com/shubhbairwa/Track-Your-Run" target="_blank" rel="noopener"
+              style="color:var(--accent-android); font-family:var(--font-mono); font-size:0.78rem; text-decoration:none;">View
+              on GitHub →</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="wrap">
+      <div class="contact-card glass reveal">
+        <h2>Let's build something reliable.</h2>
+        <p>Open to Lead Android and senior mobile engineering roles — happy to talk architecture, team process, or a
+          specific app you have in mind.</p>
+        <div class="contact-methods">
+          <a class="contact-pill glass" href="mailto:shubhamver61002@gmail.com"><i class="ri-mail-line"></i>
+            shubhamver61002@gmail.com</a>
+          <a class="contact-pill glass" href="tel:+918700088744"><i class="ri-phone-line"></i> +91 87000-88744</a>
+        </div>
+        <div class="socials">
+          <a class="glass" href="https://www.linkedin.com/in/shubham-bairwa-0296b2171/" target="_blank"
+            rel="noopener"><i class="ri-linkedin-fill"></i></a>
+          <a class="glass" href="https://github.com/shubhbairwa" target="_blank" rel="noopener"><i
+              class="ri-github-fill"></i></a>
+          <a class="glass" href="https://www.facebook.com/Bairwashubh/" target="_blank" rel="noopener"><i
+              class="ri-facebook-fill"></i></a>
+          <a class="glass" href="https://www.instagram.com/bairwa_shubh/" target="_blank" rel="noopener"><i
+              class="ri-instagram-line"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-note">© 2026 Shubham Bairwa — Built with Kotlin habits, shipped with a glass finish.</div>
+
+  <script>
+    // ---- typing effect ----
+    const roles = ["Kotlin & Jetpack Compose apps", "MVVM & Clean Architecture at scale", "Play Store apps, 10+ and counting", "code reviews that catch real bugs", "ANRs down, startup time faster", "sprints that ship on schedule"];
+    const roleEl = document.getElementById('typed-role');
+    let ri = 0, ci = 0, deleting = false;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function typeLoop() {
+      if (reduceMotion) { roleEl.textContent = roles[0]; return; }
+      const current = roles[ri];
+      if (!deleting) {
+        ci++;
+        roleEl.textContent = current.slice(0, ci);
+        if (ci === current.length) { deleting = true; setTimeout(typeLoop, 1600); return; }
+      } else {
+        ci--;
+        roleEl.textContent = current.slice(0, ci);
+        if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+      }
+      setTimeout(typeLoop, deleting ? 35 : 60);
+    }
+    typeLoop();
+
+    // ---- scroll reveal ----
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+
+    // ---- count up stats ----
+    const counters = document.querySelectorAll('.count');
+    const countIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target, 10);
+          if (reduceMotion) { el.textContent = target; countIO.unobserve(el); return; }
+          let cur = 0;
+          const step = Math.max(1, Math.round(target / 40));
+          const tick = () => {
+            cur += step;
+            if (cur >= target) { el.textContent = target; return; }
+            el.textContent = cur;
+            requestAnimationFrame(tick);
+          };
+          tick();
+          countIO.unobserve(el);
+        }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(c => countIO.observe(c));
+
+    // ---- nav active state ----
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    const navIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.5 });
+    sections.forEach(s => navIO.observe(s));
+  </script>
 
 </body>
 
